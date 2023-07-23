@@ -1,0 +1,325 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "cc2242b5-2431-4a81-a157-ecbbe27440a3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: cvlib in c:\\users\\11user\\anaconda3\\lib\\site-packages (0.2.7)\n",
+      "Requirement already satisfied: imutils in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (0.5.4)\n",
+      "Requirement already satisfied: imageio in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (2.26.0)\n",
+      "Requirement already satisfied: pillow in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (9.4.0)\n",
+      "Requirement already satisfied: progressbar in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (2.5)\n",
+      "Requirement already satisfied: numpy in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (1.23.5)\n",
+      "Requirement already satisfied: requests in c:\\users\\11user\\anaconda3\\lib\\site-packages (from cvlib) (2.28.1)\n",
+      "Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests->cvlib) (1.26.14)\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests->cvlib) (2022.12.7)\n",
+      "Requirement already satisfied: charset-normalizer<3,>=2 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests->cvlib) (2.0.4)\n",
+      "Requirement already satisfied: idna<4,>=2.5 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests->cvlib) (3.4)\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install cvlib"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "6a2cf7b8-9400-4919-a194-78b6bcc917d1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: gtts in c:\\users\\11user\\anaconda3\\lib\\site-packages (2.3.2)\n",
+      "Requirement already satisfied: playsound in c:\\users\\11user\\anaconda3\\lib\\site-packages (1.3.0)\n",
+      "Requirement already satisfied: requests<3,>=2.27 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from gtts) (2.28.1)\n",
+      "Requirement already satisfied: click<8.2,>=7.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from gtts) (8.0.4)\n",
+      "Requirement already satisfied: colorama in c:\\users\\11user\\anaconda3\\lib\\site-packages (from click<8.2,>=7.1->gtts) (0.4.6)\n",
+      "Requirement already satisfied: urllib3<1.27,>=1.21.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->gtts) (1.26.14)\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->gtts) (2022.12.7)\n",
+      "Requirement already satisfied: charset-normalizer<3,>=2 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->gtts) (2.0.4)\n",
+      "Requirement already satisfied: idna<4,>=2.5 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->gtts) (3.4)\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install gtts playsound"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "408803fb-ac64-487a-98f9-b4746d591fd7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting PyObjC\n",
+      "  Using cached pyobjc-9.2-py3-none-any.whl (4.0 kB)\n",
+      "Collecting pyobjc-framework-CoreData==9.2\n",
+      "  Downloading pyobjc-framework-CoreData-9.2.tar.gz (226 kB)\n",
+      "     ------------------------------------ 226.7/226.7 kB 346.4 kB/s eta 0:00:00\n",
+      "  Installing build dependencies: started\n",
+      "  Installing build dependencies: finished with status 'done'\n",
+      "  Getting requirements to build wheel: started\n",
+      "  Getting requirements to build wheel: finished with status 'error'\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "  error: subprocess-exited-with-error\n",
+      "  \n",
+      "  Getting requirements to build wheel did not run successfully.\n",
+      "  exit code: 1\n",
+      "  \n",
+      "  [17 lines of output]\n",
+      "  Traceback (most recent call last):\n",
+      "    File \"C:\\Users\\11User\\anaconda3\\lib\\site-packages\\pip\\_vendor\\pep517\\in_process\\_in_process.py\", line 351, in <module>\n",
+      "      main()\n",
+      "    File \"C:\\Users\\11User\\anaconda3\\lib\\site-packages\\pip\\_vendor\\pep517\\in_process\\_in_process.py\", line 333, in main\n",
+      "      json_out['return_val'] = hook(**hook_input['kwargs'])\n",
+      "    File \"C:\\Users\\11User\\anaconda3\\lib\\site-packages\\pip\\_vendor\\pep517\\in_process\\_in_process.py\", line 118, in get_requires_for_build_wheel\n",
+      "      return hook(config_settings)\n",
+      "    File \"C:\\Users\\11User\\AppData\\Local\\Temp\\pip-build-env-xb8t6wus\\overlay\\Lib\\site-packages\\setuptools\\build_meta.py\", line 341, in get_requires_for_build_wheel\n",
+      "      return self._get_build_requires(config_settings, requirements=['wheel'])\n",
+      "    File \"C:\\Users\\11User\\AppData\\Local\\Temp\\pip-build-env-xb8t6wus\\overlay\\Lib\\site-packages\\setuptools\\build_meta.py\", line 323, in _get_build_requires\n",
+      "      self.run_setup()\n",
+      "    File \"C:\\Users\\11User\\AppData\\Local\\Temp\\pip-build-env-xb8t6wus\\overlay\\Lib\\site-packages\\setuptools\\build_meta.py\", line 338, in run_setup\n",
+      "      exec(code, locals())\n",
+      "    File \"<string>\", line 26, in <module>\n",
+      "    File \"C:\\Users\\11User\\AppData\\Local\\Temp\\pip-install-l2j5w4ve\\pyobjc-framework-coredata_23a6ccc36547486da160ed25a7b8ee75\\pyobjc_setup.py\", line 469, in Extension\n",
+      "      if \"clang\" in get_config_var(\"CC\"):\n",
+      "  TypeError: argument of type 'NoneType' is not iterable\n",
+      "  [end of output]\n",
+      "  \n",
+      "  note: This error originates from a subprocess, and is likely not a problem with pip.\n",
+      "error: subprocess-exited-with-error\n",
+      "\n",
+      "Getting requirements to build wheel did not run successfully.\n",
+      "exit code: 1\n",
+      "\n",
+      "See above for output.\n",
+      "\n",
+      "note: This error originates from a subprocess, and is likely not a problem with pip.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install PyObjC"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "7127a8b1-1fe1-4012-8a0d-14d266de98cb",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: tensorflow in c:\\users\\11user\\anaconda3\\lib\\site-packages (2.13.0)\n",
+      "Requirement already satisfied: tensorflow-intel==2.13.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow) (2.13.0)\n",
+      "Requirement already satisfied: tensorflow-estimator<2.14,>=2.13.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (2.13.0)\n",
+      "Requirement already satisfied: gast<=0.4.0,>=0.2.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (0.4.0)\n",
+      "Requirement already satisfied: keras<2.14,>=2.13.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (2.13.1)\n",
+      "Requirement already satisfied: protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0dev,>=3.20.3 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (4.23.4)\n",
+      "Requirement already satisfied: setuptools in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (65.6.3)\n",
+      "Requirement already satisfied: wrapt>=1.11.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.14.1)\n",
+      "Requirement already satisfied: tensorflow-io-gcs-filesystem>=0.23.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (0.31.0)\n",
+      "Requirement already satisfied: grpcio<2.0,>=1.24.3 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.56.2)\n",
+      "Requirement already satisfied: termcolor>=1.1.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (2.3.0)\n",
+      "Requirement already satisfied: libclang>=13.0.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (16.0.6)\n",
+      "Requirement already satisfied: h5py>=2.9.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (3.7.0)\n",
+      "Requirement already satisfied: packaging in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (22.0)\n",
+      "Requirement already satisfied: six>=1.12.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.16.0)\n",
+      "Requirement already satisfied: google-pasta>=0.1.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (0.2.0)\n",
+      "Requirement already satisfied: opt-einsum>=2.3.2 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (3.3.0)\n",
+      "Requirement already satisfied: absl-py>=1.0.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.4.0)\n",
+      "Requirement already satisfied: astunparse>=1.6.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.6.3)\n",
+      "Requirement already satisfied: numpy<=1.24.3,>=1.22 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (1.23.5)\n",
+      "Requirement already satisfied: typing-extensions<4.6.0,>=3.6.6 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (4.4.0)\n",
+      "Requirement already satisfied: tensorboard<2.14,>=2.13 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (2.13.0)\n",
+      "Requirement already satisfied: flatbuffers>=23.1.21 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorflow-intel==2.13.0->tensorflow) (23.5.26)\n",
+      "Requirement already satisfied: wheel<1.0,>=0.23.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from astunparse>=1.6.0->tensorflow-intel==2.13.0->tensorflow) (0.38.4)\n",
+      "Requirement already satisfied: requests<3,>=2.21.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2.28.1)\n",
+      "Requirement already satisfied: markdown>=2.6.8 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (3.4.1)\n",
+      "Requirement already satisfied: google-auth<3,>=1.6.3 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2.22.0)\n",
+      "Requirement already satisfied: google-auth-oauthlib<1.1,>=0.5 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (1.0.0)\n",
+      "Requirement already satisfied: werkzeug>=1.0.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2.2.2)\n",
+      "Requirement already satisfied: tensorboard-data-server<0.8.0,>=0.7.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (0.7.1)\n",
+      "Requirement already satisfied: urllib3<2.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (1.26.14)\n",
+      "Requirement already satisfied: cachetools<6.0,>=2.0.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (5.3.1)\n",
+      "Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (0.2.8)\n",
+      "Requirement already satisfied: rsa<5,>=3.1.4 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (4.9)\n",
+      "Requirement already satisfied: requests-oauthlib>=0.7.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from google-auth-oauthlib<1.1,>=0.5->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (1.3.1)\n",
+      "Requirement already satisfied: charset-normalizer<3,>=2 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2.0.4)\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2022.12.7)\n",
+      "Requirement already satisfied: idna<4,>=2.5 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests<3,>=2.21.0->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (3.4)\n",
+      "Requirement already satisfied: MarkupSafe>=2.1.1 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from werkzeug>=1.0.1->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (2.1.1)\n",
+      "Requirement already satisfied: pyasn1<0.5.0,>=0.4.6 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (0.4.8)\n",
+      "Requirement already satisfied: oauthlib>=3.0.0 in c:\\users\\11user\\anaconda3\\lib\\site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<1.1,>=0.5->tensorboard<2.14,>=2.13->tensorflow-intel==2.13.0->tensorflow) (3.2.2)\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install tensorflow"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "7d4e5779-106f-4ebf-93d6-7e2495d1efa3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import cv2\n",
+    "import cvlib as cv \n",
+    "from cvlib.object_detection import draw_bbox\n",
+    "from gtts import gTTS \n",
+    "from playsound import playsound\n",
+    "import os"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "2debe9ef-fd5b-42d2-8c7b-b5019a138b40",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def speech(text):\n",
+    "    print(text)\n",
+    "    language = \"en\"\n",
+    "    out =  gTTS(text = text,lang = language, slow = False)\n",
+    "    \n",
+    "    output_directory = os.getcwd()\n",
+    "    output_file = os.path.join(output_directory, \"output.mp3\")\n",
+    "    \n",
+    "    out.save(output_file)\n",
+    "    playsound(output_file)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "0d762868-762e-4d45-bc0e-8d8ce46a5906",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "obj = cv2.VideoCapture(0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "3df35b68-9af1-4363-b2db-98bf216d844f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "labels = []"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "52ee027c-15ec-4773-8d02-4154293bd64c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "while True:\n",
+    "    ret, frame = obj.read()\n",
+    "    bbox, label,conf = cv.detect_common_objects(frame)\n",
+    "    output = draw_bbox(frame, bbox, label, conf)\n",
+    "    \n",
+    "    cv2.imshow(\"Detecting Output\",output)\n",
+    "    \n",
+    "    for item in label:\n",
+    "        if item in labels:\n",
+    "            pass\n",
+    "        else:\n",
+    "            labels.append(item)\n",
+    "            \n",
+    "    if cv2.waitKey(1) & 0xFF == ord(\" \"):\n",
+    "        break\n",
+    "        \n",
+    "cv2.destroyAllWindows()\n",
+    "\n",
+    "i = 0\n",
+    "sentence = []\n",
+    "for label in labels:\n",
+    "    if i == 0:\n",
+    "        sentence.append(f\"There is a (label) \")\n",
+    "    else:\n",
+    "        sentence.append(f\" , a {label}\")\n",
+    "        \n",
+    "    i += 1\n",
+    "speech(\" \".join(sentence))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "88f210b8-fc12-468a-9e6e-656ae788d56a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "echo \"# Object-detection-using-OpenCV\" >> README.md\n",
+    "git init\n",
+    "git add README.md\n",
+    "git commit -m \"first commit\"\n",
+    "git branch -M main\n",
+    "git remote add origin https://github.com/PrernaKharate/Object-detection-using-OpenCV.git\n",
+    "git push -u origin main\n",
+    "git remote add origin https://github.com/PrernaKharate/Object-detection-using-OpenCV.git\n",
+    "git branch -M main\n",
+    "git push -u origin main\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f18570a0-223d-482c-8dcb-5178cdb8cd7b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
